@@ -18,15 +18,19 @@
     }
 
     const { featureTitle, featureImage, featureAlt, featureDetails } = trigger.dataset;
+    const featureCard = trigger.closest(".fleet-feature-card");
+    const cardImage = featureCard?.querySelector(".fleet-feature-image");
+    const imageSource = cardImage?.getAttribute("src") || featureImage;
+    const imageAlt = cardImage?.getAttribute("alt") || featureAlt;
 
-    if (!featureTitle || !featureImage || !featureAlt || !featureDetails) {
+    if (!featureTitle || !imageSource || !imageAlt || !featureDetails) {
       console.error("Fleet feature button is missing modal content.", trigger);
       return;
     }
 
     title.textContent = featureTitle;
-    image.src = featureImage;
-    image.alt = featureAlt;
+    image.src = imageSource;
+    image.alt = imageAlt;
     description.textContent = featureDetails;
   });
 })();
