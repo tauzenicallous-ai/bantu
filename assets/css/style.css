@@ -635,7 +635,7 @@ h6 {
 #hero .hero-carousel .hero-slide {
   background-size: cover;
   background-position: center;
-  transform: scale(0.92);
+  transform: scale(1.08);
 }
 
 #hero .hero-mobile-photo {
